@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
     - name: client
-      image: tomasoares/fibonacci-client
+      image: tomasoares/fibonacci-worker
       ports:
-        - containerPort: 3000
+        - containerPort: 9999
