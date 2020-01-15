@@ -1,0 +1,41 @@
+KUBECTL COMMANDS
+-------------------
+
+kubectl apply -f <filename> 
+kubectl apply -f <directory>
+
+(creates object from yaml definition file)
+
+kubectl get pods/deployments/services/pv/pvc/secrets/namespaces
+kubectl get storageclass
+kubectl describe <type> <name>
+kubectl rollout restart -f <filename>
+
+kubectl logs <object_name> 
+
+IMPERATIVE COMMANDS
+
+kubectl delete -f <filename>
+
+kubectl set image <object_type>/<object_name> <container_name> = <new image to use>
+(changes one image from one container to another - useful to update version of a image)
+
+kubectl create secret <type> <secret_name> <source> key=value
+kubectl create secret generic <secret_name> --from-literal key=value
+
+MINIKUBE COMMANDS
+-------------------
+
+minikube ip 
+(get virtual machine IP to connect into objects inside kubernetes objects)
+
+eval $(minikube docker-env)
+(changes environment variables from minikube docker-env 
+show containers from minikube virtual machine)
+
+minikube addons enable ingress
+minikube dashboard
+
+kubectl create serviceaccount --namespace kube-system <name>
+kubectl create clusterrolebinding <name> --clusterrole=cluster-admin --serviceaccount=<namespace>:<name>
+
